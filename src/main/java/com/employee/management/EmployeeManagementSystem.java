@@ -239,7 +239,7 @@ public class EmployeeManagementSystem {
 			    for (int i = 0; i < employeList.size(); i++) {
 			        emp = employeList.get(i);
 			       
-			        if (emp != null && emp.getId() == sId) {
+			        if (emp.getId() == sId) {
 			        	
 			            emp.display();
 			            emp.work();      // Optional
