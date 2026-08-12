@@ -1,231 +1,191 @@
 # Employee Management System
 
-A Java console-based Employee Management System developed using **Object-Oriented Programming (OOP)** concepts and the **Java Collection Framework**. The application manages employee records and provides CRUD operations such as adding, displaying, searching, updating, and deleting employees.
+## Project Description
 
-## 📌 Project Overview
+Employee Management System is a **Core Java console-based application** developed to manage employee information.
 
-The Employee Management System is a console-based Java application designed to manage different types of employees such as **Developers** and **Managers**.
+The application allows users to add, display, search, update, delete, count, and sort employee records.
 
-The project demonstrates practical implementation of Java concepts including:
+The project also demonstrates important **Object-Oriented Programming concepts, Collections, Exception Handling, Custom Exception, and Comparator** in Java.
 
-* Object-Oriented Programming
-* Abstract Classes
-* Inheritance
-* Encapsulation
-* Polymorphism
-* Method Overriding
-* Exception Handling
-* Custom Exceptions
-* LinkedList
-* CRUD Operations
-* Input Validation
+---
 
-## 🚀 Features
+## Features
 
-### 1. Add Employee
+* Add new employees
+* Support for Developer and Manager employees
+* Display all employee details
+* Search employee by ID
+* Update employee information
+* Delete employee by ID
+* Display total number of employees
+* Sort employees by ID
+* Prevent duplicate employee IDs
+* Validate employee age and salary
+* Custom exception handling for invalid age
 
-* Add multiple employees in a single operation.
-* Supports two employee types:
+---
 
-  * Developer
-  * Manager
-* Validates employee ID, age, and salary.
-* Prevents duplicate employee IDs.
-* Developer-specific programming language can be stored.
-* Manager-specific team size can be stored.
+## Employee Types
 
-### 2. Display All Employees
+### Developer
 
-* Displays complete employee information.
-* Calls employee-specific `work()` behavior using polymorphism.
-
-### 3. Search Employee
-
-* Search an employee using Employee ID.
-* Displays employee details when the ID is found.
-* Shows an appropriate message when the employee does not exist.
-
-### 4. Update Employee
-
-Employee information can be updated using Employee ID.
-
-Available update options:
+Developer employee contains:
 
 * Employee ID
-* Employee Name
-* Employee Salary
-* Employee Age
+* Name
+* Age
+* Department
+* Salary
+* Programming Language
 
-The application also validates updated values.
+### Manager
 
-### 5. Delete Employee
+Manager employee contains:
 
-* Delete an employee using Employee ID.
-* Displays a message when the entered ID does not exist.
+* Employee ID
+* Name
+* Age
+* Department
+* Salary
+* Team Size
 
-### 6. Total Employees
+---
 
-* Displays the total number of employees currently stored in the system.
+## Technologies Used
 
-### 7. Input Validation & Exception Handling
+* Java
+* Core Java
+* Collections Framework
+* Exception Handling
+* OOP Concepts
 
-The application handles invalid input using:
+---
+
+## Java Concepts Used
+
+* Class and Object
+* Encapsulation
+* Inheritance
+* Abstraction
+* Polymorphism
+* Method Overriding
+* Constructor
+* Getter and Setter
+* Abstract Class
+* Custom Exception
+* ArrayList
+* HashSet
+* Iterator / Collection concepts
+* Comparator
+* `toString()`
+* `Scanner`
+* CRUD Operations
+
+---
+
+## Collections Used
+
+### ArrayList
+
+`ArrayList<Employee>` is used to store employee objects.
+
+### HashSet
+
+`HashSet<Integer>` is used to maintain unique employee IDs and prevent duplicate IDs.
+
+---
+
+## Exception Handling
+
+The project uses:
 
 * Custom `InvalidAgeException`
 * `IllegalArgumentException`
 * General exception handling
-* Duplicate employee ID validation
-* Positive value validation for ID, age, and salary
 
-## 🧑‍💻 Employee Types
+The custom exception is used to validate employee age.
 
-### Developer
+---
 
-A Developer extends the `Employee` abstract class and contains an additional property:
+## Sorting
 
-* Programming Language
+The project uses the `Comparator` interface to sort employees by employee ID.
 
-The `work()` method is overridden to represent developer-specific behavior.
+Example:
 
-### Manager
+```java
+Collections.sort(employeList, new SortComparator());
+```
 
-A Manager extends the `Employee` abstract class and contains an additional property:
+---
 
-* Team Size
-
-The `work()` method is overridden to represent manager-specific behavior.
-
-## 🏗️ OOP Concepts Used
-
-### Encapsulation
-
-Employee fields such as ID, name, age, department, and salary are declared `private` and accessed using getters and setters.
-
-### Abstraction
-
-`Employee` is an abstract class that defines common employee properties and the abstract `work()` method.
-
-### Inheritance
-
-`Developer` and `Manager` inherit common properties and behavior from the `Employee` class.
-
-### Polymorphism
-
-An `Employee` reference is used to store both `Developer` and `Manager` objects.
-
-The overridden `work()` and `display()` methods demonstrate runtime polymorphism.
-
-### Method Overriding
-
-Both `Developer` and `Manager` override the `display()` and `work()` methods.
-
-## 📚 Java Concepts Used
-
-* Classes and Objects
-* Constructors
-* Access Modifiers
-* Encapsulation
-* Abstract Classes
-* Inheritance
-* Polymorphism
-* Method Overriding
-* Exception Handling
-* Custom Exception
-* `LinkedList`
-* `Scanner`
-* Loops
-* Conditional Statements
-* CRUD Operations
-* Input Validation
-
-## 🛠️ Technologies Used
-
-| Technology         | Usage                    |
-| ------------------ | ------------------------ |
-| Java               | Application development  |
-| Java Collections   | Employee data management |
-| LinkedList         | Storing employee objects |
-| Scanner            | User input               |
-| Exception Handling | Handling invalid inputs  |
-
-## 📂 Project Structure
+## Project Structure
 
 ```text
 EmployeeManagementSystem
 │
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── com
-│   │           └── employee
-│   │               └── management
-│   │                   └── EmployeeManagementSystem.java
-│   │
-│   └── test
-│
-├── pom.xml
-├── .gitignore
-└── README.md
+├── Employee.java
+├── Developer.java
+├── Manager.java
+├── InvalidAgeException.java
+├── SortComparator.java
+├── AllOperations.java
+└── EmployeeManagementSystem.java
 ```
 
-## ▶️ How to Run
+---
 
-### Prerequisites
+## How to Run
 
-* Java JDK installed
-* Maven installed/configured
-* IDE such as Spring Tool Suite, Eclipse, IntelliJ IDEA, or VS Code
-
-### Run the Application
-
-1. Clone the repository.
-2. Open the project in your preferred Java IDE.
-3. Build the Maven project.
-4. Run:
+1. Clone or download the project.
+2. Open the project in any Java IDE such as Eclipse, STS, IntelliJ IDEA, or VS Code.
+3. Make sure Java is installed and configured.
+4. Run the main class:
 
 ```text
 EmployeeManagementSystem.java
 ```
 
-5. Select the required option from the console menu.
-
-## 📋 Application Menu
-
-```text
------Employee Management System-----
-1. Add Employee
-2. Display All Employee
-3. Search Employee By Id
-4. Update Employee
-5. Delete Employee
-6. Total Employees
-7. Exit
------------------------------------
-```
-
-## 🔮 Future Enhancements
-
-The project can be extended with:
-
-* MySQL database integration
-* JDBC
-* Spring Boot REST API
-* Web-based user interface
-* Employee login/authentication
-* Advanced search and filtering
-* Sorting employees by salary, age, or name
-* Separate service and repository layers
-
-## 🎯 Learning Objective
-
-The main objective of this project is to apply Core Java and Object-Oriented Programming concepts to a practical problem while developing a simple employee management application.
-
-## 👨‍💻 Author
-
-**Jayesh Ramesh Mane**
-
-Java Backend Developer | Fresher
+5. Select the required operation from the console menu.
 
 ---
 
-⭐ If you find this project useful, feel free to explore the repository.
+## Example Operations
+
+```text
+1. Add Employee
+2. Display Employee
+3. Search Employee
+4. Update Employee
+5. Delete Employee
+6. Total Employee
+7. Sort Employee By ID
+8. Exit
+```
+
+---
+
+## Future Enhancements
+
+The current version is a **Core Java console-based application**.
+
+In the next version, this project can be enhanced using:
+
+* Spring Boot
+* REST APIs
+* MySQL Database
+* Spring Data JPA
+* Hibernate
+* Postman API Testing
+* Frontend Integration
+
+The project can then be converted from a console-based application into a **full-stack Employee Management System**.
+
+---
+
+## Author
+
+**Jayesh Ramesh Mane**
+
+BCA Graduate | Java Backend Developer Fresher
