@@ -13,7 +13,7 @@ public class AllOperations {
 	
 	
 	public void addEmployee() {
-		System.out.print("Enter Number Of Employee: ");
+		System.out.print("Enter Hoe Many Employees,You Want To Add: ");
 		int numberOfEmployee=sc.nextInt();
 		System.out.println();
 		for(int i=0;i< numberOfEmployee;i++) {
@@ -45,7 +45,7 @@ public class AllOperations {
 			System.out.print("Enter Employee Age= ");
 			int age=sc.nextInt();
 			
-			System.out.print("Enter Employee Deparment= ");
+			System.out.print("Enter Employee Department= ");
 			String dpment=sc.next();
 			
 			System.out.print("Enter Employee Salary= ");
@@ -266,12 +266,42 @@ public class AllOperations {
 		System.out.println("Total Employees In Organization = "+employeList.size());
 		}
 	}
-	public void EmployeesortById() {
-		System.out.println("Employee Detail Sorted By ID:");
-		Collections.sort(employeList, new SortComparator());
-		for(Employee e:employeList) {
-			System.out.println(e);
+	public void SortEmployee() {
+		System.out.println("Employee Detail Sorted By User Recomendation:");
+		System.out.println("1.Sort By ID:");
+		System.out.println("2.Sort By Salary:");
+		System.out.println("3.Sort By Name:");
+		System.out.println("Enter Your Choice:");
+		int choice = sc.nextInt();
+		
+		switch(choice) {
+		case 1:
+			System.out.println("-----Employee Detail-----");
+			Collections.sort(employeList, new SortComparator());
+			for(Employee e:employeList) {
+				System.out.println(e);
+			}
+			System.out.println();
+			break;
+		case 2:
+			System.out.println("-----Employee Detail-----");
+			Collections.sort(employeList, new SortBySalary());
+			for(Employee e:employeList) {
+				System.out.println(e);
+			}
+			System.out.println();
+			break;
+		case 3:
+			System.out.println("-----Employee Detail-----");
+			Collections.sort(employeList, new SortByName());
+			for(Employee e:employeList) {
+				System.out.println(e);
+			}
+			System.out.println();
+			break;
+			default :
+				System.out.println("Invalid Input");
 		}
-		System.out.println();
+		
 	}
 }

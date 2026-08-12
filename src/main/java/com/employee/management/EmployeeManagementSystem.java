@@ -15,7 +15,7 @@ public class EmployeeManagementSystem {
 		System.out.println("4.Update Employee:");
 		System.out.println("5.Delete Employee:");
 		System.out.println("6.Total Employees:");
-		System.out.println("7.Emplyee Display By ID:");
+		System.out.println("7.Sort Employees:");
 		System.out.println("8.Exite");
 		System.out.println("-----------------------------------");
 		System.out.print("Enter Your Choise:");
@@ -51,7 +51,7 @@ public class EmployeeManagementSystem {
 				employee.totalEmployeeNumber();
 				break;
 			case 7:
-				employee.EmployeesortById();
+				employee.SortEmployee();
 				break;
 			case 8:
 				System.out.println("Program closed");
