@@ -40,10 +40,10 @@ The application supports different types of employees such as **Developer** and 
 
 ### Collections Framework
 
-* ArrayList
-* HashSet
+* `ArrayList`
+* `HashSet`
 
-ArrayList is used to store employee objects, while HashSet is used to maintain unique employee IDs.
+`ArrayList` is used to store employee objects, while `HashSet` is used to maintain unique employee IDs.
 
 ### Exception Handling
 
@@ -61,16 +61,19 @@ Examples of sorting operations:
 * Sort by Salary
 * Sort by Name
 
-## The sorting implementation uses:
+The sorting implementation uses:
 
+```java
 employeList.stream()
     .sorted(Comparator.comparing(Employee::getSalary))
     .forEach(emp -> System.out.println(emp));
+```
 
 This approach replaced the previously separate comparator class and makes the sorting implementation more concise using Java 8 features.
 
 ## 🏗️ Project Structure
 
+```text
 EmployeeManagementSystem
 │
 └── src
@@ -85,10 +88,11 @@ EmployeeManagementSystem
                 ├── Employee_Main.java
                 ├── InvalidAgeException.java
                 └── module-info.java
-
+```
 
 ## 📋 Menu Options
 
+```text
 -----Employee Management System-----
 1. Add Employee
 2. Display All Employee
@@ -98,14 +102,15 @@ EmployeeManagementSystem
 6. Total Employees
 7. Sort Employees
 8. Exit
+```
 
 ## 🔄 Employee Types
 
-## Developer
+### Developer
 
 The `Developer` class extends the `Employee` class and contains additional information about the programming language.
 
-## Manager
+### Manager
 
 The `Manager` class extends the `Employee` class and contains additional information about team size.
 
