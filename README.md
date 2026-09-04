@@ -1,191 +1,152 @@
 # Employee Management System
 
-## Project Description
+A console-based **Employee Management System** developed using **Core Java**. This project demonstrates practical implementation of Object-Oriented Programming, Collections Framework, Exception Handling, and Java 8 Stream API.
 
-Employee Management System is a **Core Java console-based application** developed to manage employee information.
+## 📌 Project Overview
 
-The application allows users to add, display, search, update, delete, count, and sort employee records.
+The Employee Management System is a console-based application that allows users to manage employee records efficiently.
 
-The project also demonstrates important **Object-Oriented Programming concepts, Collections, Exception Handling, Custom Exception, and Comparator** in Java.
+The application supports different types of employees such as **Developer** and **Manager** and provides various operations including adding, displaying, searching, updating, deleting, counting, and sorting employees.
 
----
-
-## Features
+## 🚀 Features
 
 * Add new employees
-* Support for Developer and Manager employees
+* Support for Developer and Manager employee types
 * Display all employee details
 * Search employee by ID
-* Update employee information
+* Update employee ID, name, salary, and age
 * Delete employee by ID
 * Display total number of employees
-* Sort employees by ID
-* Prevent duplicate employee IDs
-* Validate employee age and salary
-* Custom exception handling for invalid age
+* Sort employees by:
 
----
+  * ID
+  * Salary
+  * Name
+* Duplicate employee ID validation
+* Age validation using custom exception
+* Input validation using `IllegalArgumentException`
 
-## Employee Types
+## ☕ Java Concepts Used
 
-### Developer
+### Core Java
 
-Developer employee contains:
-
-* Employee ID
-* Name
-* Age
-* Department
-* Salary
-* Programming Language
-
-### Manager
-
-Manager employee contains:
-
-* Employee ID
-* Name
-* Age
-* Department
-* Salary
-* Team Size
-
----
-
-## Technologies Used
-
-* Java
-* Core Java
-* Collections Framework
-* Exception Handling
-* OOP Concepts
-
----
-
-## Java Concepts Used
-
-* Class and Object
+* Classes and Objects
+* Constructors
 * Encapsulation
 * Inheritance
 * Abstraction
 * Polymorphism
 * Method Overriding
-* Constructor
-* Getter and Setter
-* Abstract Class
-* Custom Exception
+
+### Collections Framework
+
 * ArrayList
 * HashSet
-* Iterator / Collection concepts
-* Comparator
-* `toString()`
-* `Scanner`
-* CRUD Operations
 
----
+ArrayList is used to store employee objects, while HashSet is used to maintain unique employee IDs.
 
-## Collections Used
+### Exception Handling
 
-### ArrayList
-
-`ArrayList<Employee>` is used to store employee objects.
-
-### HashSet
-
-`HashSet<Integer>` is used to maintain unique employee IDs and prevent duplicate IDs.
-
----
-
-## Exception Handling
-
-The project uses:
-
-* Custom `InvalidAgeException`
+* Custom Exception: `InvalidAgeException`
 * `IllegalArgumentException`
-* General exception handling
+* `try-catch`
 
-The custom exception is used to validate employee age.
+### Java 8 Features
 
----
+The project uses **Stream API** for employee sorting.
 
-## Sorting
+Examples of sorting operations:
 
-The project uses the `Comparator` interface to sort employees by employee ID.
+* Sort by Employee ID
+* Sort by Salary
+* Sort by Name
 
-Example:
+## The sorting implementation uses:
 
-```java
-Collections.sort(employeList, new SortComparator());
-```
+employeList.stream()
+    .sorted(Comparator.comparing(Employee::getSalary))
+    .forEach(emp -> System.out.println(emp));
 
----
+This approach replaced the previously separate comparator class and makes the sorting implementation more concise using Java 8 features.
 
-## Project Structure
+## 🏗️ Project Structure
 
-```text
 EmployeeManagementSystem
 │
-├── Employee.java
-├── Developer.java
-├── Manager.java
-├── InvalidAgeException.java
-├── SortComparator.java
-├── AllOperations.java
-└── EmployeeManagementSystem.java
-```
+└── src
+    └── main
+        └── java
+            └── com.employee.management
+                │
+                ├── Employee.java
+                ├── Developer.java
+                ├── Manager.java
+                ├── AllOperations.java
+                ├── Employee_Main.java
+                ├── InvalidAgeException.java
+                └── module-info.java
 
----
 
-## How to Run
+## 📋 Menu Options
 
-1. Clone or download the project.
-2. Open the project in any Java IDE such as Eclipse, STS, IntelliJ IDEA, or VS Code.
-3. Make sure Java is installed and configured.
-4. Run the main class:
-
-```text
-EmployeeManagementSystem.java
-```
-
-5. Select the required operation from the console menu.
-
----
-
-## Example Operations
-
-```text
+-----Employee Management System-----
 1. Add Employee
-2. Display Employee
-3. Search Employee
+2. Display All Employee
+3. Search Employee By Id
 4. Update Employee
 5. Delete Employee
-6. Total Employee
-7. Sort Employee By ID
+6. Total Employees
+7. Sort Employees
 8. Exit
-```
 
----
+## 🔄 Employee Types
 
-## Future Enhancements
+## Developer
 
-The current version is a **Core Java console-based application**.
+The `Developer` class extends the `Employee` class and contains additional information about the programming language.
 
-In the next version, this project can be enhanced using:
+## Manager
 
-* Spring Boot
-* REST APIs
-* MySQL Database
-* Spring Data JPA
-* Hibernate
-* Postman API Testing
-* Frontend Integration
+The `Manager` class extends the `Employee` class and contains additional information about team size.
 
-The project can then be converted from a console-based application into a **full-stack Employee Management System**.
+This demonstrates **inheritance and polymorphism** in Java.
 
----
+## 🛡️ Validation
 
-## Author
+The project includes validation for:
 
-**Jayesh Ramesh Mane**
+* Duplicate employee IDs
+* Invalid employee age
+* Invalid employee ID
+* Invalid salary
+* Invalid age
 
-BCA Graduate | Java Backend Developer Fresher
+A custom `InvalidAgeException` is used when an employee's age is below the required limit.
+
+## 📚 What I Learned
+
+Through this project, I practiced:
+
+* Designing a Java console application
+* Applying OOP principles
+* Working with Collections
+* Implementing CRUD operations
+* Handling exceptions
+* Using `HashSet` for unique IDs
+* Using Java 8 Stream API
+* Sorting objects using `Comparator.comparing()`
+* Refactoring traditional sorting logic using Stream API
+
+## 🔮 Future Enhancements
+
+* Add database connectivity using MySQL
+* Convert the application into a Spring Boot REST API
+* Add a web-based frontend
+* Add employee authentication
+* Store employee records permanently
+
+## 👨‍💻 Author
+
+**Jayesh Mane**
+
+Aspiring Java Backend Developer
