@@ -1,6 +1,6 @@
-package com.employee.management;
-
-abstract class Employee {
+package com.jayesh.employeemanagement.model;
+import com.jayesh.employeemanagement.exception.InvalidAgeException;
+public abstract class Employee {
 	private int id;
 	private String name;
 	private int age;
@@ -35,7 +35,7 @@ abstract class Employee {
 	}
 
 	public String getName() {
-		return name;
+		return name.toUpperCase();
 	}
 
 	public void setName(String name) {
@@ -56,7 +56,7 @@ abstract class Employee {
 	}
 
 	public String getDepartment() {
-		return department;
+		return department.toUpperCase();
 	}
 
 	public double getSalary() {
@@ -84,6 +84,7 @@ abstract class Employee {
 
 	@Override
 	public String toString() {
-		return id + "  " + name + "  " + salary + "  " + department;
-	}
+		return String.format("%-7d %-18s %-10.2f %-12s",
+                id, name, salary, department);
+	} 
 }

@@ -1,6 +1,6 @@
-package com.employee.management;
-
-class Developer extends Employee{
+package com.jayesh.employeemanagement.model;
+import com.jayesh.employeemanagement.exception.InvalidAgeException;
+public class Developer extends Employee{
 	private String programmingLanguage;
 	public Developer(int id,String name,int age,String dpmt,double salary,String programmL)
 			throws InvalidAgeException    {

@@ -1,6 +1,6 @@
-package com.employee.management;
-
-class Manager extends Employee{
+package com.jayesh.employeemanagement.model;
+import com.jayesh.employeemanagement.exception.InvalidAgeException;
+public class Manager extends Employee{
 	int teamSize;
 	public Manager(int id,String name,int age,String dpmt,double salary,int teamSize)
 			throws InvalidAgeException {

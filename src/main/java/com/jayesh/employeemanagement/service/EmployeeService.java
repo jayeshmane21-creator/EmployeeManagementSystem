@@ -1,15 +1,17 @@
-package com.employee.management;
+package com.jayesh.employeemanagement.service;
 
 import java.util.ArrayList;
 
-import java.util.Collections;
+
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Scanner;
-import java.util.stream.Stream;
+import com.jayesh.employeemanagement.exception.InvalidAgeException;
+import com.jayesh.employeemanagement.model.Developer;
+import com.jayesh.employeemanagement.model.Employee;
+import com.jayesh.employeemanagement.model.Manager;
 
-public class AllOperations {
+public class EmployeeService {
 	Scanner sc = new Scanner(System.in);
 	ArrayList<Employee> employeList = new ArrayList<>();
 
@@ -29,6 +31,7 @@ public class AllOperations {
 			System.out.println("Enter Your Choice");
 			int choice = sc.nextInt();
 
+			
 			int id;
 			while (true) {
 				System.out.print("Enter Employee id: ");
@@ -40,10 +43,10 @@ public class AllOperations {
 					break;
 				}
 			}
-
+			
 			sc.nextLine();
 			System.out.print("Enter Employee Name: ");
-			String name = sc.nextLine().toUpperCase();
+			String name = sc.nextLine();
 
 			System.out.print("Enter Employee Age: ");
 			int age = sc.nextInt();
@@ -53,7 +56,7 @@ public class AllOperations {
 
 			System.out.print("Enter Employee Salary: ");
 			double salary = sc.nextDouble();
-
+			
 			try {
 				switch (choice) {
 				case 1:
@@ -157,7 +160,7 @@ public class AllOperations {
 						while (true) {
 							System.out.print("Enter New Id: ");
 							newId = sc.nextInt();
-							if (newId != employee.getId() && uniqueId.contains(newId)) {
+							if (newId == employee.getId() && uniqueId.contains(newId)) {
 								System.out.println("Employee Id Is Alredy Exists");
 							} else {
 
@@ -277,26 +280,22 @@ public class AllOperations {
 		if (employeList.isEmpty()) {
 			System.out.println("No Employee Found");
 		} else {
+			System.out.println("-----Employee Detail-----");
+			System.out.printf("%-7s %-18s %-10s %-12s%n",
+	                  "ID", "NAME", "SALARY", "DEPARTMENT");
 			switch (choice) {
 
 			case 1:
-
-				System.out.println("-----Employee Detail-----");
-
 				employeList.stream().sorted(Comparator.comparing(Employee::getId))
 						.forEach(emp -> System.out.println(emp));
 
 				break;
 			case 2:
-				System.out.println("-----Employee Detail-----");
-
 				employeList.stream().sorted(Comparator.comparing(Employee::getSalary))
 						.forEach(emp -> System.out.println(emp));
 
 				break;
 			case 3:
-				System.out.println("-----Employee Detail-----");
-
 				employeList.stream().sorted(Comparator.comparing(r -> r.getName()))
 						.forEach(emp -> System.out.println(emp));
 				break;
